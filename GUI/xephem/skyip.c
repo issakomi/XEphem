@@ -2180,8 +2180,7 @@ si_createdialog()
 	    fr_w = XmCreateFrame (rc_w, "GRF", args, n);
 	    XtAddCallback (glrow_w, XmNvalueChangedCallback, si_managetb_cb,
 							    (XtPointer)fr_w);
-	    if (XmToggleButtonGetState(glrow_w))
-		XtManageChild (fr_w);
+	    if (XmToggleButtonGetState(glrow_w)) XtManageChild (fr_w);
 
 		/* N.B. since this DA may not be mapped (if the frame is not
 		 * managed) take care it is not used before it is really up.
@@ -2197,8 +2196,7 @@ si_createdialog()
 	    fr_w = XmCreateFrame (rc_w, "GCF", args, n);
 	    XtAddCallback (glcol_w, XmNvalueChangedCallback, si_managetb_cb,
 							    (XtPointer)fr_w);
-	    if (XmToggleButtonGetState(glcol_w))
-		XtManageChild (fr_w);
+	    if (XmToggleButtonGetState(glcol_w)) XtManageChild (fr_w);
 
 		n = 0;
 		XtSetArg (args[n], XmNresizePolicy, XmRESIZE_NONE); n++;
